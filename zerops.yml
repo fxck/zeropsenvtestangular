@@ -1,0 +1,13 @@
+app:
+  build:
+    base: [ nodejs@14 ]
+    build:
+      - npm i
+      - npm run build
+    deploy: [ 'dist/zeropsenvtest/~/' ]
+    cache: [ node_modules ]
+  run:
+    envReplace:
+      target: [ '.' ]
+      delimiter: [ '%%' ]
+
